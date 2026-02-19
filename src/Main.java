@@ -38,5 +38,21 @@ public static void main(String[] args) throws HibernateException {
     }
 
 
+    try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+        String hql = "SELECT l.pedido.id, SUM(l.cantidad * l.precioUnitario) " +
+                "FROM PedidoLinea l " +
+                "WHERE l.pedido.estado <> :estadoExcluido " +
+                "GROUP BY l.pedido.id ORDER BY l.pedido.id";
+
+        List<Object[]> resultados = session.createQuery(hql)
+                .setParameter("estadoExcluido", EstadoPedido.CANCELADO)
+                .list();
+
+        for (Object[] fila : resultados) {
+            System.out.println("Pedido ID: " + fila[0] + " | Total: " + fila[1]);
+        }
+    }
+
+
 
 }

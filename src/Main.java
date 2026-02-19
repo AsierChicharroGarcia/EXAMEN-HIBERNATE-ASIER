@@ -18,4 +18,16 @@ public static void main(String[] args) throws HibernateException {
     session.close();
     HibernateUtil.shutdown();
 
+
+    try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+        Transaction tx = session.beginTransaction();
+        PedidoLinea linea = session.get(PedidoLinea.class, 1L);
+        if (linea != null) {
+            linea.setCantidad(5);
+            session.update(linea);
+        }
+        tx.commit();
+    }
+
+
 }

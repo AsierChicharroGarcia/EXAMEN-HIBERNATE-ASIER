@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="nimworks.nworm.hibernate" type="repository">
+    <properties maven-id="com.nimworks:nworm.hibernate:4.0.7.Final" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/nimworks/nworm.hibernate/4.0.7.Final/nworm.hibernate-4.0.7.Final.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/nimworks/nworm.core/4.0.7.Final/nworm.core-4.0.7.Final.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,319 @@
+{
+  "snapshot": {
+    "created": "2026-02-19T13:29:17.792",
+    "database": {
+      "shortName": "mysql",
+      "majorVersion": "999",
+      "minorVersion": "999",
+      "productName": "MySQL",
+      "url": "jdbc://mock"
+    },
+    "objects": {
+      "liquibase.structure.core.Catalog": [
+        {
+          "catalog": {
+            "default": true,
+            "snapshotId": "c0a1100"
+          }
+        }
+      ]
+      ,
+      "liquibase.structure.core.Column": [
+        {
+          "column": {
+            "certainDataType": false,
+            "name": "cantidad",
+            "nullable": false,
+            "relation": "liquibase.structure.core.Table#c0a1102",
+            "snapshotId": "c0a1108",
+            "type": {
+              "typeName": "int"
+            }
+          }
+        },
+        {
+          "column": {
+            "certainDataType": false,
+            "name": "cliente_email",
+            "nullable": false,
+            "relation": "liquibase.structure.core.Table#c0a1112",
+            "snapshotId": "c0a1114",
+            "type": {
+              "columnSize": "120!{java.lang.Integer}",
+              "typeName": "varchar"
+            }
+          }
+        },
+        {
+          "column": {
+            "certainDataType": false,
+            "name": "estado",
+            "nullable": false,
+            "relation": "liquibase.structure.core.Table#c0a1112",
+            "snapshotId": "c0a1116",
+            "type": {
+              "typeName": "enum"
+            }
+          }
+        },
+        {
+          "column": {
+            "certainDataType": false,
+            "name": "fecha",
+            "nullable": false,
+            "relation": "liquibase.structure.core.Table#c0a1112",
+            "snapshotId": "c0a1115",
+            "type": {
+              "typeName": "date"
+            }
+          }
+        },
+        {
+          "column": {
+            "autoIncrementInformation": {
+              "incrementBy": "1!{java.math.BigInteger}",
+              "startWith": "1!{java.math.BigInteger}"
+            },
+            "certainDataType": false,
+            "name": "id",
+            "nullable": false,
+            "relation": "liquibase.structure.core.Table#c0a1102",
+            "snapshotId": "c0a1104",
+            "type": {
+              "typeName": "bigint"
+            }
+          }
+        },
+        {
+          "column": {
+            "autoIncrementInformation": {
+              "incrementBy": "1!{java.math.BigInteger}",
+              "startWith": "1!{java.math.BigInteger}"
+            },
+            "certainDataType": false,
+            "name": "id",
+            "nullable": false,
+            "relation": "liquibase.structure.core.Table#c0a1112",
+            "snapshotId": "c0a1111",
+            "type": {
+              "typeName": "bigint"
+            }
+          }
+        },
+        {
+          "column": {
+            "certainDataType": false,
+            "name": "pedido_id",
+            "nullable": false,
+            "relation": "liquibase.structure.core.Table#c0a1102",
+            "snapshotId": "c0a1106",
+            "type": {
+              "typeName": "bigint"
+            }
+          }
+        },
+        {
+          "column": {
+            "certainDataType": false,
+            "name": "precio_unitario",
+            "nullable": false,
+            "relation": "liquibase.structure.core.Table#c0a1102",
+            "snapshotId": "c0a1109",
+            "type": {
+              "columnSize": "10!{java.lang.Integer}",
+              "decimalDigits": "2!{java.lang.Integer}",
+              "typeName": "decimal"
+            }
+          }
+        },
+        {
+          "column": {
+            "certainDataType": false,
+            "name": "producto",
+            "nullable": false,
+            "relation": "liquibase.structure.core.Table#c0a1102",
+            "snapshotId": "c0a1107",
+            "type": {
+              "columnSize": "80!{java.lang.Integer}",
+              "typeName": "varchar"
+            }
+          }
+        }
+      ]
+      ,
+      "liquibase.structure.core.ForeignKey": [
+        {
+          "foreignKey": {
+            "deleteRule": "importedKeyNoAction!{liquibase.structure.core.ForeignKeyConstraintType}",
+            "foreignKeyColumns": [
+              "liquibase.structure.core.Column#c0a1106"
+            ]
+            ,
+            "foreignKeyTable": "liquibase.structure.core.Table#c0a1102",
+            "name": "fk_linea_pedido",
+            "primaryKeyColumns": [
+              "liquibase.structure.core.Column#c0a1111"
+            ]
+            ,
+            "primaryKeyTable": "liquibase.structure.core.Table#c0a1112",
+            "snapshotId": "c0a1110"
+          }
+        }
+      ]
+      ,
+      "liquibase.structure.core.Index": [
+        {
+          "index": {
+            "columns": [
+              {
+                "column": {
+                  "name": "id"
+                }
+              }
+            ]
+            ,
+            "name": "PRIMARY",
+            "snapshotId": "c0a1103",
+            "table": "liquibase.structure.core.Table#c0a1102",
+            "unique": true
+          }
+        },
+        {
+          "index": {
+            "columns": [
+              {
+                "column": {
+                  "name": "id"
+                }
+              }
+            ]
+            ,
+            "name": "PRIMARY",
+            "snapshotId": "c0a1113",
+            "table": "liquibase.structure.core.Table#c0a1112",
+            "unique": true
+          }
+        },
+        {
+          "index": {
+            "columns": [
+              {
+                "column": {
+                  "name": "pedido_id"
+                }
+              }
+            ]
+            ,
+            "name": "fk_linea_pedido",
+            "snapshotId": "c0a1105",
+            "table": "liquibase.structure.core.Table#c0a1102",
+            "unique": false
+          }
+        }
+      ]
+      ,
+      "liquibase.structure.core.PrimaryKey": [
+        {
+          "primaryKey": {
+            "backingIndex": "liquibase.structure.core.Index#c0a1103",
+            "columns": [
+              "liquibase.structure.core.Column#c0a1104"
+            ]
+            ,
+            "name": "PRIMARY",
+            "snapshotId": "c0a1118",
+            "table": "liquibase.structure.core.Table#c0a1102"
+          }
+        },
+        {
+          "primaryKey": {
+            "backingIndex": "liquibase.structure.core.Index#c0a1113",
+            "columns": [
+              "liquibase.structure.core.Column#c0a1111"
+            ]
+            ,
+            "name": "PRIMARY",
+            "snapshotId": "c0a1117",
+            "table": "liquibase.structure.core.Table#c0a1112"
+          }
+        }
+      ]
+      ,
+      "liquibase.structure.core.Schema": [
+        {
+          "schema": {
+            "catalog": "liquibase.structure.core.Catalog#c0a1100",
+            "default": true,
+            "name": "tienda_tech_m21_b",
+            "snapshotId": "c0a1101"
+          }
+        }
+      ]
+      ,
+      "liquibase.structure.core.Table": [
+        {
+          "table": {
+            "columns": [
+              "liquibase.structure.core.Column#c0a1104",
+              "liquibase.structure.core.Column#c0a1106",
+              "liquibase.structure.core.Column#c0a1107",
+              "liquibase.structure.core.Column#c0a1108",
+              "liquibase.structure.core.Column#c0a1109"
+            ]
+            ,
+            "indexes": [
+              "liquibase.structure.core.Index#c0a1103",
+              "liquibase.structure.core.Index#c0a1105"
+            ]
+            ,
+            "name": "pedido_lineas",
+            "outgoingForeignKeys": [
+              "liquibase.structure.core.ForeignKey#c0a1110"
+            ]
+            ,
+            "primaryKey": "liquibase.structure.core.PrimaryKey#c0a1118",
+            "schema": "liquibase.structure.core.Schema#c0a1101",
+            "snapshotId": "c0a1102"
+          }
+        },
+        {
+          "table": {
+            "columns": [
+              "liquibase.structure.core.Column#c0a1111",
+              "liquibase.structure.core.Column#c0a1114",
+              "liquibase.structure.core.Column#c0a1115",
+              "liquibase.structure.core.Column#c0a1116"
+            ]
+            ,
+            "indexes": [
+              "liquibase.structure.core.Index#c0a1113"
+            ]
+            ,
+            "name": "pedidos",
+            "primaryKey": "liquibase.structure.core.PrimaryKey#c0a1117",
+            "schema": "liquibase.structure.core.Schema#c0a1101",
+            "snapshotId": "c0a1112"
+          }
+        }
+      ]
+      
+    },
+    "snapshotControl": {
+      "snapshotControl": {
+        "includedType": [
+          "liquibase.structure.core.Catalog",
+          "liquibase.structure.core.Column",
+          "liquibase.structure.core.ForeignKey",
+          "liquibase.structure.core.Index",
+          "liquibase.structure.core.PrimaryKey",
+          "liquibase.structure.core.Schema",
+          "liquibase.structure.core.Sequence",
+          "liquibase.structure.core.Table",
+          "liquibase.structure.core.UniqueConstraint",
+          "liquibase.structure.core.View"
+        ]
+        
+      }
+    }
+  }
+}

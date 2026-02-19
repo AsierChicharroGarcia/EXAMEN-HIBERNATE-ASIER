@@ -54,5 +54,15 @@ public static void main(String[] args) throws HibernateException {
     }
 
 
+    try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+        Transaction tx = session.beginTransaction();
+        PedidoLinea lineaAEliminar = session.get(PedidoLinea.class, 4L);
+        if (lineaAEliminar != null) {
+            session.delete(lineaAEliminar);
+        }
+        tx.commit();
+    }
+
+
 
 }

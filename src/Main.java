@@ -29,7 +29,6 @@ public static void main(String[] args) throws HibernateException {
         tx.commit();
     }
 
-
     try (Session session = HibernateUtil.getSessionFactory().openSession()) {
         String hql = "SELECT l FROM PedidoLinea l JOIN FETCH l.pedido WHERE l.id = :lineaId";
         PedidoLinea l = session.createQuery(hql, PedidoLinea.class)
@@ -37,6 +36,7 @@ public static void main(String[] args) throws HibernateException {
                 .uniqueResult();
         System.out.println("Producto: " + l.getProducto() + " | Email Cliente: " + l.getPedido().getClienteEmail());
     }
+
 
 
 }
